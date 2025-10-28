@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     change_serve_dis(serve, turn)
   }, [serve, turn])
-  function change_serve_dis(side: Number, turn: Number) {
+  function change_serve_dis(side: number, turn: number) {
     if (side == 1) {
       //red
       if (turn % 2 == 0) {
