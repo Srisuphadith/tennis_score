@@ -4,12 +4,41 @@ import './App.css'
 function App() {
   const [scoreL, setCountL] = useState(0)
   const [scoreR, setCountR] = useState(0)
+  const [L, setL] = useState(0)
+  const [R, setR] = useState(0)
   const [turn, setTurn] = useState(0)
   const [serve, setServe] = useState(0)
+  const [st, setSt] = useState(1)
   let L_dis = 0
   let R_dis = 0
   useEffect(() => {
     change_serve_dis(serve, turn)
+    if(st){
+    if(L == R && L%3 == 0 && R%3 == 0 && L != 0 && R != 0){
+      document.getElementById("due")!.innerText = "DUE";
+      document.getElementById("due")!.style.display = "block";
+      setSt(0)
+    }else{
+      document.getElementById("due")!.style.display = "none";
+    }
+  }else{
+    if(L-R == 2){
+      document.getElementById("due")!.innerText = "Blue win";
+      setSt(1)
+      setL(0)
+      setR(0)
+      setCountR(0)
+      setCountL(0)
+    }
+    if(R-L == 2){
+      document.getElementById("due")!.innerText = "Red win";
+      setSt(1)
+      setL(0)
+      setR(0)
+      setCountR(0)
+      setCountL(0)
+    }
+  }
   }, [serve, turn])
   function change_serve_dis(side: number, turn: number) {
     if (side == 1) {
@@ -34,6 +63,7 @@ function App() {
   }
   function Lhandle() {
     setTurn(turn + 1)
+    setL(L+1)
     setCountL(() => {
       switch (scoreL) {
         case 0: L_dis = scoreL + 15; break;
@@ -48,6 +78,7 @@ function App() {
   }
   function Rhandle() {
     setTurn(turn + 1)
+    setR(R+1)
     setCountR(() => {
       switch (scoreR) {
         case 0: R_dis = scoreR + 15; break;
@@ -88,6 +119,10 @@ function App() {
         <button id="serveR" onClick={serveRedHadle}>Red</button>
 
       </div>
+      <div className="tnsr">
+        <p>Turn</p>
+        <p id="tn">{turn}</p>
+      </div>
       <div>
         <table id="cort">
           <tbody>
@@ -109,6 +144,9 @@ function App() {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div id="due">
+          DUE
       </div>
       <div className="score">
         <div className="left_score" onClick={Lhandle}>{scoreL}</div>
