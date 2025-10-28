@@ -25,7 +25,7 @@ function App() {
       //blue
       if (turn % 2 == 1) {
         document.getElementById("con_left1")!.style.backgroundColor = "#676affff";
-        document.getElementById("con_left2").style.backgroundColor = "blue";
+        document.getElementById("con_left2")!.style.backgroundColor = "blue";
       } else {
         document.getElementById("con_left1")!.style.backgroundColor = "blue";
         document.getElementById("con_left2")!.style.backgroundColor = "#676affff";
