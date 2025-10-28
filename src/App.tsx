@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -17,20 +15,20 @@ function App() {
     if (side == 1) {
       //red
       if (turn % 2 == 0) {
-        document.getElementById("con_right3").style.backgroundColor = "#ff6767ff";
-        document.getElementById("con_right4").style.backgroundColor = "red";
+        document.getElementById("con_right3")!.style.backgroundColor = "#ff6767ff";
+        document.getElementById("con_right4")!.style.backgroundColor = "red";
       } else {
-        document.getElementById("con_right3").style.backgroundColor = "red";
-        document.getElementById("con_right4").style.backgroundColor = "#ff6767ff";
+        document.getElementById("con_right3")!.style.backgroundColor = "red";
+        document.getElementById("con_right4")!.style.backgroundColor = "#ff6767ff";
       }
     } else if (side == 2) {
       //blue
       if (turn % 2 == 1) {
-        document.getElementById("con_left1").style.backgroundColor = "#676affff";
+        document.getElementById("con_left1")!.style.backgroundColor = "#676affff";
         document.getElementById("con_left2").style.backgroundColor = "blue";
       } else {
-        document.getElementById("con_left1").style.backgroundColor = "blue";
-        document.getElementById("con_left2").style.backgroundColor = "#676affff";
+        document.getElementById("con_left1")!.style.backgroundColor = "blue";
+        document.getElementById("con_left2")!.style.backgroundColor = "#676affff";
       }
     }
   }
@@ -64,20 +62,20 @@ function App() {
   }
   function serveRedHadle() {
     setServe(1)
-    document.getElementById("serveR").style.backgroundColor = "red";
-    document.getElementById("serveB").style.backgroundColor = "#a0a0a0";
-            document.getElementById("con_left1").style.backgroundColor = "blue";
-        document.getElementById("con_left2").style.backgroundColor = "blue";
-  
+    document.getElementById("serveR")!.style.backgroundColor = "red";
+    document.getElementById("serveB")!.style.backgroundColor = "#a0a0a0";
+    document.getElementById("con_left1")!.style.backgroundColor = "blue";
+    document.getElementById("con_left2")!.style.backgroundColor = "blue";
+
 
     //change_serve_dis(serve, turn)
   }
   function serveBlueHadle() {
     setServe(2)
-    document.getElementById("serveR").style.backgroundColor = "#a0a0a0";
-    document.getElementById("serveB").style.backgroundColor = "blue";
-            document.getElementById("con_right3").style.backgroundColor = "red";
-        document.getElementById("con_right4").style.backgroundColor = "red";
+    document.getElementById("serveR")!.style.backgroundColor = "#a0a0a0";
+    document.getElementById("serveB")!.style.backgroundColor = "blue";
+    document.getElementById("con_right3")!.style.backgroundColor = "red";
+    document.getElementById("con_right4")!.style.backgroundColor = "red";
 
     //change_serve_dis(serve, turn)
   }
