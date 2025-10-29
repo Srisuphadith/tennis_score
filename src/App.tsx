@@ -13,13 +13,15 @@ function App() {
   let R_dis = 0
   useEffect(() => {
     change_serve_dis(serve, turn)
+    if(turn == 1){
+      document.getElementById("due")!.style.display = "none";
+    }
     if (st) {
       if (L == R && L % 3 == 0 && R % 3 == 0 && L != 0 && R != 0) {
         document.getElementById("due")!.innerText = "DUE";
         document.getElementById("due")!.style.display = "block";
         setSt(0)
       } else {
-        document.getElementById("due")!.style.display = "none";
         if (L == 4) {
           document.getElementById("due")!.innerText = "Blue win";
           document.getElementById("due")!.style.display = "block";
@@ -27,6 +29,7 @@ function App() {
           setR(0)
           setCountR(0)
           setCountL(0)
+          setTurn(0)
         }
         if (R == 4) {
           document.getElementById("due")!.innerText = "Red win";
@@ -35,6 +38,7 @@ function App() {
           setR(0)
           setCountR(0)
           setCountL(0)
+          setTurn(0)
         }
       }
     } else {
@@ -45,6 +49,7 @@ function App() {
         setR(0)
         setCountR(0)
         setCountL(0)
+        setTurn(0)
       }
       if (R - L == 2) {
         document.getElementById("due")!.innerText = "Red win";
@@ -53,6 +58,7 @@ function App() {
         setR(0)
         setCountR(0)
         setCountL(0)
+        setTurn(0)
       }
     }
   }, [serve, turn])
