@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
+import github_logo from './assets/github_logo.png'
 function App() {
   const [scoreL, setCountL] = useState(0)
   const [scoreR, setCountR] = useState(0)
@@ -174,6 +174,11 @@ function App() {
         <div className="left_score" onClick={Lhandle}>{scoreL}</div>
         <div className="right_score" onClick={Rhandle}>{scoreR}</div>
 
+      </div>
+      <div className='git_l'>
+        <a href='https://github.com/Srisuphadith/tennis_score.git' target='_blank'> 
+          <img src={github_logo} width={"50px"}></img>
+        </a>
       </div>
     </>
 
